@@ -1,0 +1,9 @@
+xyz;ano;3
+Krycí jména;ano;2
+Dostihy;ne;3
+Karty;ano;1
+Dáma;ne;1
+Krekroň špekoň;ano;1
+Šachy;ano;1
+Osadníci z Katanu;ano;1
+xyz;ano;1
