@@ -1,9 +1,11 @@
-xyz;ano;3
+želvičky;ano;2
 Krycí jména;ano;2
+Terra mystika;ano;3
 Dostihy;ne;3
 Karty;ano;1
 Dáma;ne;1
 Krekroň špekoň;ano;1
 Šachy;ano;1
 Osadníci z Katanu;ano;1
+Vikky Nikky;ne;2
 xyz;ano;1

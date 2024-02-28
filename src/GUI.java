@@ -15,14 +15,16 @@ public class GUI extends JFrame {
     private JCheckBox upravCB;
     private JLabel LabelOblibenosti;
     private JButton addButton;
+    private JButton seznamBtn;
 
     private int indexAktualniDeskovky = 0;
     private final SpravceDeskovek spravceDeskovek;
 
     public GUI(SpravceDeskovek spravceDeskovek) {
         this.spravceDeskovek = spravceDeskovek;
+        initMenu();
         initComponents();
-        setBounds(500, 200, 600, 600);
+        setBounds(400, 80, 700, 700);
         updateGUI();
         btnNext.addActionListener(e -> dalsiDeskovka());
         btnPrevious.addActionListener(e -> predchoziDeskovka());
@@ -41,6 +43,12 @@ public class GUI extends JFrame {
         radioButton2.setEnabled(false);
         radioButton3.setEnabled(false);
         checkBox.setEnabled(false);
+        ImageIcon nextIcon = new ImageIcon("images/nextIcon.png");
+        btnNext.setIcon(nextIcon);
+        ImageIcon prevIcon = new ImageIcon("images/prevIcon.png");
+        btnPrevious.setIcon(prevIcon);
+        ImageIcon saveIcon = new ImageIcon("images/saveIcon.png");
+        btnSave.setIcon(saveIcon);
 
         upravCB.addActionListener(new ActionListener() {
             @Override
@@ -79,6 +87,12 @@ public class GUI extends JFrame {
                 }catch (OblibenostException ex) {
                     System.err.println("chyba" + ex);
                 }
+            }
+        });
+        seznamBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                seznamHer();
             }
         });
     }
@@ -150,4 +164,35 @@ public class GUI extends JFrame {
                 }
         }
     }
+
+    private void initMenu() {
+        JMenuBar menuBar = new JMenuBar();
+        setJMenuBar(menuBar);
+
+        JMenu fileMenu = new JMenu("Informace");
+        menuBar.add(fileMenu);
+
+        JMenuItem openItem = new JMenuItem("Pozdrav");
+        fileMenu.add(openItem);
+        JMenuItem openItem1 = new JMenuItem("Informace o vývojáři");
+        fileMenu.add(openItem1);
+        JMenuItem openItem2 = new JMenuItem("Vývojář aplikace");
+        fileMenu.add(openItem2);
+
+        JMenuItem aboutItem = new JMenuItem("O aplikaci...");
+        menuBar.add(aboutItem);
+
+        openItem.addActionListener(e -> reakce());
+
+    }
+    private void reakce() {
+        JOptionPane.showMessageDialog(this, "Ahoj!");
+    }
+
+
+    private void seznamHer() {
+        JOptionPane.showMessageDialog(this, "Seznam není k dispozici.");
+
+    }
+
 }

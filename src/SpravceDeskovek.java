@@ -22,7 +22,9 @@ public class SpravceDeskovek extends JFrame {
             throw new RuntimeException(e);
         } catch (OblibenostException e) {
             JOptionPane.showMessageDialog(null, e.getLocalizedMessage());
-            throw new RuntimeException(e);
+            throw new RuntimeException();
+        } catch (NumberFormatException e) {
+            System.err.println("chyba při parsování čísel:" + e.getMessage());
         }
     }
     public void pridejDeskovku(Deskovka deskovka) {
